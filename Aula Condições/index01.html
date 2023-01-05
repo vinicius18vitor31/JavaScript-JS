@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Nacionalidade - JS</title>
+    <style>
+        body {
+            background-color: aqua;
+        }
+        span {
+            margin-top: 20px;
+            font-size: 20px;
+        }
+        #res {
+            margin-top: 20px;
+            font-size: 20px;
+        }
+
+    </style>
+</head>
+<body>
+    <h1>Localização</h1>
+    <span>Em que país voçe nasceu? <input type="text" name="pais" id="pais"></span>
+    <input type="button" value="verificar" onclick="analisar()">
+    <div id="res">
+
+    </div>
+
+    <script>
+        var natural = window.document.querySelector('input#pais')
+        var res = window.document.querySelector('div#res')
+
+        function analisar() {
+            var nacl = (natural.value) 
+            res.innerHTML = `Voçe nasceu no(a) ${nacl}!`
+            
+            if (nacl == 'Brasil') {
+                res.innerHTML += (` Voçe é Brasileiro!!`)
+            } else{
+                res.innerHTML += (` Voçe é Estrangeiro!!`)
+            }
+            
+        }
+    </script>
+</body>
+</html>
