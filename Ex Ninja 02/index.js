@@ -80,7 +80,7 @@ Crie uma função com as seguintes características:
                 if (a === undefined && b === undefined && c === undefined) {
                     return 'false';
                 } else{
-                    return 'null';
+                    return null;
                 }
             }
         } 
