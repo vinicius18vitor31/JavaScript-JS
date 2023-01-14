@@ -21,7 +21,7 @@ pessoa.parar();
 pessoa.nomeCompleto = function(){
     return 'Olá! Meu nome é ' + pessoa.nome + ' ' + pessoa.sobreNome + '!';
 }
-pessoa.nomeCompleto()
+console.log(pessoa.nomeCompleto)
 
 pessoa.mostrarIdade = function(){
     return 'Olá! Eu tenho ' + pessoa.idade + 'idade!';
