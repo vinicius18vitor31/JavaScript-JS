@@ -13,7 +13,7 @@ As propriedades e tipos de valores para cada propriedade desse objeto devem ser:
 - `andando` - Boolean - recebe "falso" por padrão
 - `caminhouQuantosMetros` - Number - recebe "zero" por padrão
 */
-var pessoa = {nome: 'Vinicius', sobrenome: 'Souza', sexo: 'Masculino', idade: 37, altura: 1.77, peso: 110, andando: "falso", caminhouQuantosMetros: 0};
+var pessoa = {nome: 'Vinicius', sobrenome: 'Souza', sexo: 'Masculino', idade: 37, altura: 1.77, peso: 110, andando: "false", caminhouQuantosMetros: 0};
 
 
 /*
@@ -47,31 +47,42 @@ pessoa.andar();
 Adicione um método ao objeto `pessoa` chamado `parar`, que irá modificar o valor
 da propriedade `andando` para o valor booleano que representa "falso".
 */
-
+pessoa.parar = function(){
+    pessoa.andando = false;
+}
+pessoa.parar();
 
 /*
 Crie um método chamado `nomeCompleto`, que retorne a frase:
 - "Olá! Meu nome é [NOME] [SOBRENOME]!"
 */
-
+pessoa.nomeCompleto = function(){
+    return 'Olá! Meu nome é ' + pessoa.nome + '' + pessoa.sobreNome;
+}
 
 /*
 Crie um método chamado `mostrarIdade`, que retorne a frase:
 - "Olá, eu tenho [IDADE] anos!"
 */
-
+pessoa.mostrarIdade = function(){
+    return 'Olá! Eu tenho ' + pessoa.idade + 'idade!';
+}
 
 /*
 Crie um método chamado `mostrarPeso`, que retorne a frase:
 - "Eu peso [PESO]Kg."
 */
-
+pessoa.mostrarPeso = function(){
+    return 'Olá! Eu tenho ' + pessoa.peso + 'Kg!';
+}
 
 /*
 Crie um método chamado `mostrarAltura` que retorne a frase:
 - "Minha altura é [ALTURA]m."
 */
-
+pessoa.mostrarAltura = function(){
+    return 'Minha altura é ' + pessoa.altura + 'm!';
+}
 
 /*
 Agora vamos brincar um pouco com o objeto criado:
