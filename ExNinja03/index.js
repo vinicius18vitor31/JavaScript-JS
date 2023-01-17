@@ -26,6 +26,7 @@ pessoa.felizAniversario = function(){
 };
 
 pessoa.felizAniversario();
+pessoa.felizAniversario();
 
 /*
 Adicione um método ao objeto `pessoa` chamado `andar`, que terá as seguintes

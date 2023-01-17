@@ -59,27 +59,17 @@ carro.obterMarcaModelo = function(){
 }
 carro.obterMarcaModelo();
 
-/*
-- Se o carro já estiver cheio, com todos os assentos já preenchidos, o método
-deve retornar a frase: "O carro já está lotado!"
-- Se ainda houverem lugares no carro, mas a quantidade de pessoas passadas por
-parâmetro for ultrapassar o limite de assentos do carro, então você deve
-mostrar quantos assentos ainda podem ser ocupados, com a frase:
-"Só cabem mais [QUANTIDADE_DE_PESSOAS_QUE_CABEM] pessoas!"
-- Se couber somente mais uma pessoa, mostrar a palavra "pessoa" no retorno
-citado acima, no lugar de "pessoas".
-*/
-/*- Se o carro já estiver cheio, com todos os assentos já preenchidos, o método
-deve retornar a frase: "O carro já está lotado!"
-*/
 
-carro.adicionarPessoas = function( numeroPessoas = 0 ){
+
+
+carro.adicionarPessoas = function( numeroPessoas ){
     carro.quantidadePessoas += numeroPessoas;
     if(carro.adicionarPessoas === carro.assentos){
         return 'O carro está lotado!'
     }
     
 }
+carro.adicionarPessoas()
 carro.adicionarPessoas()
 
 console.log(carro.adicionarPessoas());
