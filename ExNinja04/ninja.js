@@ -33,8 +33,8 @@ isTruthy({a: 1, b: 2})
 
 var carro = {marca: 'Gol', modelo: 'G3', placa: 'JPN 7311', ano: 2003 + ' / ' + 2004, cor: 'cinza', quantasPortas: 5, assentos: 5, quantidadePessoas: 0};
 
-carro.mudarCor = function(){
-    carro.cor = 'preto';
+carro.mudarCor = function(cor){
+    carro.cor = cor;
 };
 carro.mudarCor();
 
@@ -72,14 +72,14 @@ citado acima, no lugar de "pessoas".
 /*- Se o carro já estiver cheio, com todos os assentos já preenchidos, o método
 deve retornar a frase: "O carro já está lotado!"
 */
-carro.adicionarPessoas = function(){
-    carro.entrar = 1;
-    carro.entrar++;
-    return 'Já temos ' + carro.entrar + ' no carro!' 
+
+carro.adicionarPessoas = function( numeroPessoas = 0 ){
+    carro.quantidadePessoas += numeroPessoas;
+    if(carro.adicionarPessoas === carro.assentos){
+        return 'O carro está lotado!'
+    }
     
 }
-carro.adicionarPessoas();
-carro.adicionarPessoas();
-carro.adicionarPessoas();
+carro.adicionarPessoas()
 
-console.log(carro.adicionarPessoas())
+console.log(carro.adicionarPessoas());

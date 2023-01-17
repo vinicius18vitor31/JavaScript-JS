@@ -50,8 +50,8 @@ var carro = {marca: 'Gol', modelo: 'G3', placa: 'JPN 7311', ano: 2003 + ' / ' + 
 Crie um método chamado `mudarCor` que mude a cor do carro conforme a cor
 passado por parâmetro.
 */
-carro.mudarCor = function(){
-    carro.cor = 'preto';
+carro.mudarCor = function(cor){
+    carro.cor = cor;
 };
 
 carro.mudarCor();
@@ -60,7 +60,7 @@ carro.mudarCor();
 Crie um método chamado `obterCor`, que retorne a cor do carro.
 */
 carro.obterCor = function(){
-    return carro.cor = 'cinza';
+    return carro.cor = cor;
 };
 carro.obterCor();
 
@@ -84,7 +84,7 @@ Crie um método chamado `obterMarcaModelo`, que retorne:
 Para retornar os valores de marca e modelo, utilize os métodos criados.
 */
 carro.obterMarcaModelo = function(){
-    return 'Esse carro é um ' + carro.marca + ' ' + carro.modelo + '!';
+    return 'Esse carro é um ' + carro.obterMarca() + ' ' + carro.obterModelo() + '!';
 };
 carro.obterMarcaModelo();
 
@@ -114,22 +114,23 @@ retornar algum valor.
 
 Qual a cor atual do carro?
 */
-
+carro.obterCor(); //cinza
 
 // Mude a cor do carro para vermelho.
-
+carro.mudarCor('vermelho');
 
 // E agora, qual a cor do carro?
 
+carro.obterCor();
 
 // Mude a cor do carro para verde musgo.
-
+carro.mudarCor('verde musgo');
 
 // E agora, qual a cor do carro?
-
+carro.obterCor();
 
 // Qual a marca e modelo do carro?
-
+carro.obterMarca();
 
 // Adicione 2 pessoas no carro.
 
