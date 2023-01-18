@@ -31,7 +31,16 @@ isTruthy('-0');
 isTruthy({a: 1, b: 2})
 
 
-var carro = {marca: 'Gol', modelo: 'G3', placa: 'JPN 7311', ano: 2003 + ' / ' + 2004, cor: 'cinza', quantasPortas: 5, assentos: 5, quantidadePessoas: 0};
+var carro = {
+    marca: 'Gol', 
+    modelo: 'G3', 
+    placa: 'JPN 7311', 
+    ano: 2004, 
+    cor: 'cinza', 
+    quantasPortas: 5, 
+    assentos: 5, 
+    quantidadePessoas: 0,
+};
 
 carro.mudarCor = function(cor){
     carro.cor = cor;
@@ -62,14 +71,19 @@ carro.obterMarcaModelo();
 
 
 
-carro.adicionarPessoas = function( numeroPessoas ){
-    carro.quantidadePessoas += numeroPessoas;
-    if(carro.adicionarPessoas === carro.assentos){
-        return 'O carro está lotado!'
-    }
-    
-}
-carro.adicionarPessoas()
-carro.adicionarPessoas()
+carro.adicionarPessoas = function( quantidade ){
+    var totalPessoas = carro.quantidadePessoas + quantidade;
 
-console.log(carro.adicionarPessoas());
+    if(carro.quantidadePessoas === carro.assentos && totalPessoas >= carro.assentos){
+        return "O carro já está lotado!"; 
+    }
+    if(carro.quantidadePessoas + quantidade >= carro.assentos){
+        var vagasRestantes = carro.assentos - carro.quantidadePessoas;
+        return `Só cabem mais ${vagasRestantes} pessoa${vagasRestantes > 1 ? "s" : " "} !`;
+    }
+    carro.quantidadePessoas += quantidade;
+    return `Já temos ${carro.quantidadePessoas} pessoas no carro!`;
+}
+
+carro.adicionarPessoas(5);
+console.log(carro)

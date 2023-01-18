@@ -2,19 +2,19 @@
 Crie uma variável qualquer, que receba um array com alguns valores aleatórios
 - ao menos 5 - (fica por sua conta os valores do array).
 */
-var newArrey = [ 'Vinicius', 2, true , null, undefined];
+let valores = [ 'Vinicius', 2, true , null, undefined];
 
 /*
 Crie uma função que receba um array como parâmetro, e retorne esse array.
 */
-myArrey = function (arrey){
+minhaFuncao = function (arrey){
     return  arrey;
 };
 
 /*
 Imprima o segundo índice do array retornado pela função criada acima.
 */
-console.log(myArrey(newArrey[1]));
+console.log(minhaFuncao(valores[1]))
 
 /*
 Crie uma função que receba dois parâmetros: o primeiro, um array de valores; eo
@@ -51,30 +51,46 @@ propriedades:
 - Se o parâmetro não for passado, a função deve retornar o objeto com todos
 os livros.
 */
-// ?
+
+function book (meuBook){
+    var meuLivro = {
+        'senhorDosAneis': {volumeDePagina: 150, autor: 'Vinicius', editora: 'ViniciusLTDA'}, 
+        'esqueceramDeMin': {volumeDePagina:200, autor: 'Vinicius', editora: 'ViniciusLTDA'},
+        'boraBahea': {volumeDePagina: 285, autor: 'Vinicius', editora: 'ViniciusLTDA'}
+    }
+    /*
+    var livroSelecionado = meuLivro[meuBook]
+    if(livroSelecionado){
+        return livroSelecionado;
+    }
+   return 'livro não encontrado'
+   */
+   return !meuBook ? meuLivro : meuLivro[meuBook];
+}
+
+console.log(book());
 
 /*
 Usando a função criada acima, imprima o objeto com todos os livros.
 */
-// ?
+console.log(book());
 
 /*
 Ainda com a função acima, imprima a quantidade de páginas de um livro qualquer,
 usando uma frase:
 "O livro [NOME_DO_LIVRO] tem [X] páginas!"
 */
-// ?
-
+let meuBook = 'Bora Bahea';
+console.log(`O livro ${meuBook} tem ${book(meuBook).volumeDePagina} páginas`);
 /*
 Ainda com a função acima, imprima o nome do autor de um livro qualquer, usando
 uma frase:
 "O autor do livro [NOME_DO_LIVRO] é [AUTOR]."
 */
-// ?
-
+console.log(`O autor do livro ${meuBook} é ${book(meuBook).autor}`);
 /*
 Ainda com a função acima, imprima o nome da editora de um livro qualquer, usando
 uma frase:
 "O livro [NOME_DO_LIVRO] foi publicado pela editora [NOME_DA_EDITORA]."
 */
-// ?
+console.log(`O livro ${meuBook} foi publicado pela editora ${book(meuBook).editora}`);
