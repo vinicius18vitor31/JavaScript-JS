@@ -45,3 +45,8 @@ console.log(numero)
     }
     
 console.log(convertToHex('amarelo'))
+
+var num = 0;
+
+
+console.log(num)
