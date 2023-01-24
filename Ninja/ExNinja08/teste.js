@@ -17,34 +17,46 @@ var varShowName = function showName() {
     return 'Vinicius Souza'
 }
 
-console.log(`A função ${varShowName.name} retorna ${showName()}`)
+console.log(`A função ${varShowName.name} retorna ${varShowName()}`)
 
-function calculator (operator) {
-    return function (number1, number2) {
+function calculador (operador) {
+    return function (numero1, numero2) {
       var result;
-      switch (operator) {
+      switch (operador) {
         case '+':
-          result = number1 + number2;
+          result = numero1 + numero2;
           break;
         case '-':
-          result = number1 - number2;
+          result = numero1 - numero2;
           break;
         case '*':
-          result = number1 * number2;
+          result = numero1 * numero2;
           break;
         case '/':
-          result = number1 / number2;
+          result = numero1 / numero2;
           break;
         case '%':
-          result = number1 % number2;
+          result = numero1 % numero2;
           break;
         default:
           return 'Operação inválida.';
       }
-      return `Resultado da operação: ${number1} ${operator} ${number2} = ${result}.`
+      return `Resultado da operação: ${numero1} ${operador} ${numero2} = ${result}.`
     };
   }
   
-  var sum = calculator ('+');
+  var sum = calculador ('+');
 
   console.log(sum(5, 6))
+
+  var subtracao = calculador('-');
+  var multiplicacao = calculador('*');
+  var divisiao = calculador('/');
+  var restOperacao = calculador('%');
+  var qualquerCoisa = calculador('x');
+
+  console.log(subtracao(5, 2));
+  console.log(multiplicacao(20, 8));
+  console.log(divisiao(15, 3));
+  console.log(restOperacao(50, 10));
+  console.log(qualquerCoisa(10, 20));
